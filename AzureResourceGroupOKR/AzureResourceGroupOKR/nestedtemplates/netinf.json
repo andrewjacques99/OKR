@@ -6,7 +6,90 @@
   "variables": {
   },
   "resources": [
+    {
+      "name": "[parameters('vnetname')]",
+      "type": "Microsoft.Network/virtualNetworks",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2016-03-30",
+      "dependsOn": [],
+      "tags": {
+        "displayName": "[parameters('vnetname')]"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('vnetprefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[parameters('snet1name')]",
+            "properties": {
+              "addressPrefix": "[parameters('snet1prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('snet2name')]",
+            "properties": {
+              "addressPrefix": "[parameters('snet2prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('snet3name')]",
+            "properties": {
+              "addressPrefix": "[parameters('snet3prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('snet4name')]",
+            "properties": {
+              "addressPrefix": "[parameters('snet4prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('snet5name')]",
+            "properties": {
+              "addressPrefix": "[parameters('snet5prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('snet6name')]",
+            "properties": {
+              "addressPrefix": "[parameters('snet6prefix')]"
+            }
+          }
+        ]
+      }
+    }
   ],
   "outputs": {
+    "vnetID": {
+      "type": "string",
+      "value": "[parameters('vnetname')]"
+    },
+    "snet1ID": {
+      "type": "string",
+      "value": "[parameters('snet1name')]"
+    },
+    "snet2ID": {
+      "type": "string",
+      "value": "[parameters('snet2name')]"
+    },
+    "snet3ID": {
+      "type": "string",
+      "value": "[parameters('snet3name')]"
+    },
+    "snet4ID": {
+      "type": "string",
+      "value": "[parameters('snet4name')]"
+    },
+    "snet5ID": {
+      "type": "string",
+      "value": "[parameters('snet5name')]"
+    },
+    "snet6ID": {
+      "type": "string",
+      "value": "[parameters('snet6name')]"
+    }
   }
 }
