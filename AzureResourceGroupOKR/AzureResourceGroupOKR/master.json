@@ -4,7 +4,7 @@
   "parameters": {
     "_artifactsLocation": {
       "type": "string",
-      "defaultValue": "T:\\WORK"
+      "defaultValue": "https://github.com/andrewjacques99/OKR/blob/master/AzureResourceGroupOKR/AzureResourceGroupOKR"
     }
   },
   "variables": {
