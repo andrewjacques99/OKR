@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "baseTemplateUri": {
-      "value": "https://github.com/andrewjacques99/OKR/blob/master/AzureResourceGroupOKR/AzureResourceGroupOKR"
+      "value": "https://raw.githubusercontent.com/andrewjacques99/OKR/master/AzureResourceGroupOKR/AzureResourceGroupOKR"
     },
     "templateFolder": {
       "value": "nestedtemplates"
