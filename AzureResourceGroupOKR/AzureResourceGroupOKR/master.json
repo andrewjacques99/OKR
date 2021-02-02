@@ -2,36 +2,149 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "_artifactsLocation": {
+    "baseTemplateUri": {
       "type": "string",
-      "defaultValue": "https://github.com/andrewjacques99/OKR/blob/master/AzureResourceGroupOKR/AzureResourceGroupOKR"
+      "metadata": {
+        "description": "Base URI of template resources."
+      }
+    },
+    "templateFolder": {
+      "type": "string",
+      "metadata": {
+        "description": "Base URI of template resources."
+      }
+    },
+    "templateNetInf": {
+        "type": "string",
+        "metadata": {
+          "description": "Template name for the virtual network."
+        }
+      },
+    "vnetname": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+    "vnetprefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet1name": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet1prefix": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet2name": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet2prefix": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet3name": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet3prefix": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet4name": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet4prefix": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet5name": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+      "snet5prefix": {
+        "type": "string",
+        "metadata": {
+          "description": ""
+        }
+      },
+    "snet6name": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet6prefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
     }
   },
   "variables": {
-    "netinfTemplateFolder": "nestedtemplates",
-    "netinfTemplateFileName": "netinf.json",
-    "netinfTemplateParametersFileName": "netinf.parameters.json"
+    "deploymentApiVersion": "2019-05-01",
+    "vNetApiVersion": "2015-06-15",
+    "storageApiVersion": "2015-06-15",
+    "nicApiVersion": "2015-06-15",
+    "vmApiVersion": "2015-06-15",
+    "publicIpApiVersion": "2015-06-15"
   },
   "resources": [
     {
       "name": "netinf",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-05-01",
-      "resourceGroup": "rg-netinf-prod-001",
-      "dependsOn": [],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(parameters('_artifactsLocation'), '/', variables('netinfTemplateFolder'), '/', variables('netinfTemplateFileName'))]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parametersLink": {
-          "uri": "[concat(parameters('_artifactsLocation'), '/', variables('netinfTemplateFolder'), '/', variables('netinfTemplateParametersFileName'))]",
-          "contentVersion": "1.0.0.0"
+      "apiVersion": "[variables('deploymentApiVersion')]",
+        "resourceGroup": "rg-netinf-prod-001",
+        "dependsOn": [],
+        "properties": {
+          "mode": "Incremental",
+          "templateLink": {
+            "uri": "[concat(parameters('baseTemplateUri'), '/', parameters('templateFolder'), '/', parameters('templateNetInf'))]",
+            "contentVersion": "1.0.0.0"
+          },
+          "parameters": {
+            "vnetname": { "value": "[parameters('vnetname')]" },
+            "vnetprefix": { "value": "[parameters('vnetprefix')]" },
+            "snet1name": { "value": "[parameters('snet1name')]" },
+            "snet1prefix": { "value": "[parameters('snet1prefix')]" },
+            "snet2name": { "value": "[parameters('snet2name')]" },
+            "snet2prefix": { "value": "[parameters('snet2prefix')]" },
+            "snet3name": { "value": "[parameters('snet3name')]" },
+            "snet3prefix": { "value": "[parameters('snet3prefix')]" },
+            "snet4name": { "value": "[parameters('snet4name')]" },
+            "snet4prefix": { "value": "[parameters('snet4prefix')]" },
+            "snet5name": { "value": "[parameters('snet5name')]" },
+            "snet5prefix": { "value": "[parameters('snet5prefix')]" },
+            "snet6name": { "value": "[parameters('snet6name')]" },
+            "snet6prefix": { "value": "[parameters('snet6prefix')]" }
+          }
         }
       }
+    ],
+    "outputs": {
     }
-  ],
-  "outputs": {
-  }
-}
+ }

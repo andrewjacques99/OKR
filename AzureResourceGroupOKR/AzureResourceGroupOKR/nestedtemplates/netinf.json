@@ -2,6 +2,90 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "vnetname": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "vnetprefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet1name": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet1prefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet2name": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet2prefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet3name": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet3prefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet4name": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet4prefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet5name": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet5prefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet6name": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    },
+    "snet6prefix": {
+      "type": "string",
+      "metadata": {
+        "description": ""
+      }
+    }
   },
   "variables": {
   },

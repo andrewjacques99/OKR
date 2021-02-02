@@ -2,5 +2,56 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "baseTemplateUri": {
+      "value": "https://github.com/andrewjacques99/OKR/blob/master/AzureResourceGroupOKR/AzureResourceGroupOKR"
+    },
+    "templateFolder": {
+      "value": "nestedtemplates"
+    },
+    "templateNetInf": {
+      "value": "netinf.json"
+    },
+    "vnetname": {
+      "value": "vnet-inf-prod-172.22.0.0-24"
+    },
+    "vnetprefix": {
+      "value": "172.22.0.0/24"
+    },
+    "snet1name": {
+      "value": "snet-inf-prod-aadds-172.20.0.0-28"
+    },
+    "snet1prefix": {
+      "value": "172.22.0.0/28"
+    },
+    "snet2name": {
+      "value": "snet-inf-prod-jump-172.20.0.16-28"
+    },
+    "snet2prefix": {
+      "value": "172.22.0.16/28"
+    },
+    "snet3name": {
+      "value": "snet-inf-prod-app-172.20.0.32-28"
+    },
+    "snet3prefix": {
+      "value": "172.22.0.32/28"
+    },
+    "snet4name": {
+      "value": "snet-inf-prod-images-172.20.0.48-29"
+    },
+    "snet4prefix": {
+      "value": "172.22.0.48/29"
+    },
+    "snet5name": {
+      "value": "snet-inf-prod-wvd-172.20.0.64-27"
+    },
+    "snet5prefix": {
+      "value": "172.22.0.64/27"
+    },
+    "snet6name": {
+      "value": "snet-inf-prod-cmd-172.20.0.96-27"
+    },
+    "snet6prefix": {
+      "value": "172.22.0.96/27"
+    }
   }
 }
